@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Structure</title>
+
+<style>
+    .container{
+        border: 2px solid black;
+        box-sizing: border-box;
+        margin:0;
+        padding:0;
+        height: 100vh;
+        width: 100%;
+        background-color: pink;
+    }
+    .child1{
+        border: 1px solid black;
+        margin: 20px;
+        padding: 10px;
+        width: 90%;
+        height: auto;
+        background-color: lightcyan;
+    }
+    .child2{
+        border: 1px solid black;
+        margin: 20px;
+        padding: 10px;
+        width: 90%;
+        height: auto;
+        background-color: lightgreen;
+    }
+    .grandchild1{
+        border: 1px solid black;
+        margin: 15px;
+        padding: 10px;
+        height: auto;
+        background-color: lightyellow;
+    }
+    .grandchild2{
+        border: 1px solid black;
+        margin: 15px;
+        padding: 20px;
+        height: auto;
+        background-color: lightgray;
+    }
+    h1 ,p {
+        box-sizing: border-box ;
+        border : 1px solid black ;
+        margin : 10px ;
+        padding : 10px ;
+        width : 95% ;
+        height : auto ;
+        background-color : white ;
+    }
+    header {
+        text-align : center ;
+        font-size : 30px ;
+        margin : 10px ;
+        padding : 10px ;
+        border : 2px solid black ;
+        background-color : lightcoral ;
+    }
+</style>
+
+</head>
+<body>
+    <header><b>HTML PAGE STRUCTURE</b></header>
+    <div class="container">
+        <h4>html</h4>
+
+        <div class="child1">
+            <h4>head</h4>
+
+            <div class="grandchild1">
+                <h4>   Page title</h4>
+            </div>
+            <h4>/head</h4>
+        </div>
+
+        <div class="child2">
+            <h4>body</h4>
+
+            <div class="grandchild2">
+                <h1>This is a heading</h1>
+                <p>This is a paragraph</p>
+                <p>This is another paragraph</p>
+            </div>
+            <h4>/body</h4>
+        </div>
+        <h4>/html</h4>
+    </div>
+</body>
+</html>
