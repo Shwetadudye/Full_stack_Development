@@ -3,106 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elements Html5</title>
+    <title>Block and Inline</title>
     <style>
-
-         td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: left;
-            background-color: lightskyblue;
+        span,
+        q{
+            background-color: rgb(155, 155, 187);
         }
-        th {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: left;
-            background-color: lightgreen;
+        div,
+        p{
+            background-color: rebeccapurple;
+            color: bisque;
         }
-
-        p {
-            font-size: 18px;
+        .last-div{
+            background-color: red;
         }
-
-        h1 ,h2{
-            color: darkblue;
+        #sec-last-div{
+            background-color: aqua;
         }
-    
     </style>
 </head>
 <body>
-    <h1 align="center">HTML5 Elements</h1>
-    <hr><bo><hr></bo>
-    <p>An HTML element is the building  block of a webpage.<br>
-    It includes :<ul><li>A Start Tag
-    <li>Content
-    <li>An End Tag
-    </li></ul><br>
-    </p>
-    <h4>Example of an HTML Element :
-    <br></h4>
-     <mark>ELEMENT = &lt;p&gt;+content &lt;/p&gt;
-    </mark>
-    <ul><li>
-        Tag : only the &lt;p&gt; and &lt;/p&gt; parts are tags.
-    </li><li>
-        Element : The start tag, content, and end tag together make up an element.
-    </li></ul>
+    <!-- # Block Element:- The div element has no special meaning at all, it represents its children..It can be used 
+     with the class.,lang and tittle attribute to mark up semantics common to a group of consecutive element -->
 
-    <hr><bo><hr></bo>
+    <!-- 1)Block-level Elements
+    Start on a new line.
+    Take up the full width available.
+    Can contain other block elements and inline elements.
+    #Common block elements:
+    <div>, <p>, <h1>–<h6>, <table>, <form>, <ul>, <ol>, <section>, <article> etc. -->
 
-    <h2 align="center">Types of Elements</h2>
-    <table border="1" width="100%">
-        <tr>
-            <th>Element Type</th>
-            <th>Description</th>
-            <th>Example</th>
-        </tr>
-        <tr>
-            <td>Paired Elements</td>
-            <td>These elements have opening and closing tags.</td>
-            <td>&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;</td>
-        </tr>
-        <tr>
-            <td>Empty (Self closing ) Elements</td>
-            <td>These elements do not have an end tag</td>
-            <td>&lt;br&gt;, &lt;hr&gt;, &lt;img&gt; &lt;input&gt;,&lt;meta&gt;,&lt;link&gt;</td>
-        </tr>
-        <tr>
-            <td>Block -Level Elements</td>
-           <td>Take Full width of the page.
-                Always start on a new line
-            </td>
-            <td>&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, &lt;section&gt;,&lt;article&gt; </td>
-        </tr>
-        <tr>
-            <td>Inline Elements</td>
-            <td>Take only as much width as necessary.
-                Do not start on a new line
-            </td>
-            <td>&lt;span&gt;, &lt;a&gt;, &lt;img&gt;, &lt;strong&gt;,&lt;em&gt; </td>
-        </tr>
-    </table>
+    <p>This is a paragraph (block element).</p>
+    <div style="background-color: lightblue; padding: 10px;">
+     This is a div block. It starts on a new line and takes full width.
+    </div>
+    <div style="background-color: lightblue; padding: 10px;">
+     This is a div block. It starts on a new line and takes full width.
+    </div>
 
-    <hr><bo><hr></bo>
-    <table></table>
-    <h2 align="center">Semantic and Non Semantic Elements</h2>
-  <table border="1" width="100%">
-        <tr>
-            <th>Element Type</th>
-            <th>Description</th>
-            <th>Example</th>
-        </tr>
-        <tr>
-            <td>Semantic Elements</td>
-            <td>These elements clearly describe their meaning to both the browser and the developer.</td>
-            <td>&lt;article&gt;, &lt;section&gt;, &lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;</td>
-        </tr>
-        <tr>
-            <td>Non Semantic Elements</td>
-            <td>These elements do not provide any information about their content.</td>
-            <td>&lt;div&gt;, &lt;span&gt;</td>
-        </tr>
-    </table>
+    <!-- #inline-elements:- The span element doesn't mean anything on its own, but can be useful when usedtogether with 
+     the global attributes, e.g. class,  lang, on dir. It represents its children. -->
+
+    <!-- 2. Inline Elements
+    Do not start on a new line.
+    Only take up as much width as necessary.
+    Usually used to format text inside block elements.
+    Common inline elements:
+    <span>, <a>, <b>, <i>, <u>, <img>, <strong>, <em> etc. -->
+     
+    <p>This is <span style="color: red;">inline text</span> inside a paragraph.</p>
+    <p>This is <span style="color: red;">inline text</span> inside a paragraph.</p>
+    <p>This is <span style="color: red;">inline text</span> inside a paragraph.</p>
+    <span>inline element lorem one two three</span>
+    <span>inline element lorem one two three</span>
+    <span>inline element lorem one two three</span><br>
+    <a href="#">This is an inline link</a>
+
+    <!-- 3. Div vs Span
+   <div> → Block-level container (used for grouping big sections).
+   <span> → Inline container (used for styling small text parts). -->
+
+    <div style="background-color: lightgreen; padding: 10px;">
+    <h3>Block Example (Div)</h3>
+    <p>This is inside a block.</p>
+    </div>
+    <p>Here is <span style="color: blue;">blue text</span> inside a sentence.</p>
+
+<br><br>
+<hr><hr>    
     
+    <q>inline element lorem one two three</q>
+    <q>i'm Shweta dudye hello all</q>
+    <p>A</p>
+    <div><id="sec-last-div">block element</div>
+    <span>inline element lorem one two three</span>
+    <span>inline element lorem one two three</span>
+    <span>inline element lorem one two three</span>
+    <span>inline element lorem one two three</span>
+    <span>inline element lorem one two three</span>
+    <span>inline element lorem one two three</span>
+    <span>inline element lorem one two three</span>
+    <div class="last-div">block element</div>
+    <a href="https://www.google.com" target="_blank">google</a> <br>
+     <a href="https://www.google.com" target="_blank">google</a>
 </body>
 </html>
