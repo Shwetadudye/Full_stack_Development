@@ -1,0 +1,72 @@
+<!--HTML layout means arranging the webpage structure using different sections like header, navigation, main content, sidebar, and footer.-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Layout</title>
+
+    <style>
+        header, nav, section, article, aside, footer {
+            border: 2px solid black;
+            margin: 10px;
+            padding: 15px;
+            background-color: blueviolet;
+        }
+
+        .container {
+            display: flex;
+            
+        }
+
+        main {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Website</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <main>
+            <section>
+                <h2>Section Title</h2>
+                <p>This is a section inside main content.</p>
+            </section>
+
+            <article>
+                <h2>Article Title</h2>
+                <p>This is an article. It can stand alone.</p>
+            </article>
+        </main>
+
+        <aside>
+            <h3>Sidebar</h3>
+            <p>Extra info, ads, links, etc.</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>© 2025 My Website</p>
+    </footer>
+
+</body>
+</html>
