@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form TASK 4 </title>
+</head>
+<body>
+    <p>
+        Design the below web page using HTML no CSS is need.
+    </p>
+    
+   <h1> Application Form  </h1>
+
+  <form>
+    <label for="fname" > First Name: </label>
+    <input type="fname" id="fname"  name = "fname">
+    <label for = "lname" > Last Name : </label>
+    <input type="lname" if="lname" name ="lname">
+    <br>
+    <br>
+    <label for ="date of birth "> Date of Birth </label>
+    <input type="datetime-local" name = "Date of birth">
+    <label for = "Age" > Age </label>
+    <input type="number" id ="age" name ="age">
+    <br> <br>
+    <label for ="gender"> Gender </label>
+    <select name ="gender" id="gender">
+        <option value="male"> Male </option>
+        <option value="female"> Female </option>
+        <option value="others">Others </option>
+    </select>
+    <label for="email"> Email </label>
+    <input type="email" id="email" name ="email">
+
+    <br>
+    <br>
+    <p> Position Available
+    <input type="radio" id="junior" name ="position" value="junior">
+    <label for="junior"> Junior Developer </label>
+    <input type="radio" id="mid" name ="position" value="mid">
+    <label for ="mid" > Mid - Level Developer </label>
+    <input type="radio" id = "senior" name ="position" value="senior">
+    <label for = "senior"> Senior Developer </label>
+</p>
+
+<p>Programming Languages
+ <input type="checkbox"  id ="java"  name = "languages" value ="java">
+ <label for ="java" > Java</label>
+ <input type="checkbox"  id="python" name ="languages" value ="python">
+ <label for ="python" > Python </label>
+ <input type="checkbox" id="javascript" name ="languages" value ="javascript">
+ <label for="JavaScript"> JavaScript </label>
+</p>
+<label for="password">Password</label>
+<input type="password" id="password" name="password" required>
+<label for = "cpassword">Confirm Password</label>
+<input type ="cpassword" id="cpassword" name="cpassword" required>
+<br>
+<br>
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+    
+  </form>
+</body>
+</html>
