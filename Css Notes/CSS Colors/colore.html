@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Colors Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .title {
+            text-align: center;
+            font-size: 32px;
+            color: #ff6600;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .box {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            border-left: 5px solid #ff6600;
+        }
+        code {
+            background: #eee;
+            padding: 7px 10px;
+            display: block;
+            margin-top: 10px;
+            border-radius: 6px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="title">CSS Colors Notes</h1>
+
+    <!-- 1: Color Names -->
+    <div class="box">
+        <h2>1️⃣ Using Color Names</h2>
+        <p>CSS provides predefined color names like red, blue, green, yellow, etc.</p>
+
+        <code>
+color: red;
+background-color: lightblue;
+border: 2px solid green;
+        </code>
+    </div>
+
+    <!-- 2: Hex Color Codes -->
+    <div class="box">
+        <h2>2️⃣ Hex Color Codes</h2>
+        <p>Hex codes define color values using a 6-digit combination of numbers and letters.</p>
+
+        <code>
+color: #ff0000;   /* red */
+color: #00ff00;   /* green */
+color: #0000ff;   /* blue */
+        </code>
+
+        <p><b>Shortcut (3-digit Hex):</b></p>
+
+        <code>
+color: #f00;   /* red */
+color: #0f0;   /* green */
+color: #00f;   /* blue */
+        </code>
+    </div>
+
+    <!-- 3: RGB -->
+    <div class="box">
+        <h2>3️⃣ RGB Colors</h2>
+        <p>RGB stands for Red, Green, Blue (0–255 range).</p>
+
+        <code>
+color: rgb(255, 0, 0);    /* red */
+color: rgb(0, 255, 0);    /* green */
+color: rgb(0, 0, 255);    /* blue */
+        </code>
+    </div>
+
+    <!-- 4: RGBA (with Transparency) -->
+    <div class="box">
+        <h2>4️⃣ RGBA Colors (with Transparency)</h2>
+        <p>A is Alpha → controls opacity (0 = transparent, 1 = solid).</p>
+
+        <code>
+color: rgba(255, 0, 0, 0.5);   /* 50% transparent red */
+color: rgba(0, 0, 255, 0.2);   /* light transparent blue */
+        </code>
+    </div>
+
+    <!-- 5: HSL Colors -->
+    <div class="box">
+        <h2>5️⃣ HSL Colors</h2>
+        <p>HSL = Hue, Saturation, Lightness</p>
+
+        <code>
+color: hsl(0, 100%, 50%);    /* red */
+color: hsl(120, 100%, 50%);  /* green */
+color: hsl(240, 100%, 50%);  /* blue */
+        </code>
+    </div>
+
+    <!-- 6: HSLA Colors -->
+    <div class="box">
+        <h2>6️⃣ HSLA (with transparency)</h2>
+
+        <code>
+color: hsla(0, 100%, 50%, 0.4);   /* transparent red */
+        </code>
+    </div>
+
+    <!-- 7: Gradients -->
+    <div class="box">
+        <h2>7️⃣ Gradient Colors</h2>
+        <p>Used for smooth transitions between two or more colors.</p>
+
+        <code>
+background: linear-gradient(red, yellow);
+background: linear-gradient(to right, blue, purple);
+background: radial-gradient(circle, red, orange, yellow);
+        </code>
+    </div>
+
+    <!-- 8: Summary -->
+    <div class="box">
+        <h2>8️⃣ Quick Summary (Revision)</h2>
+
+        <code>
+Color Names: red, blue, green  
+Hex: #ff0000  
+RGB: rgb(255, 0, 0)  
+RGBA: rgba(255, 0, 0, 0.5)  
+HSL: hsl(0, 100%, 50%)  
+HSLA: hsla(0, 100%, 50%, 0.5)  
+Gradients: linear-gradient(), radial-gradient()  
+        </code>
+
+        <p><b>Best Practice:</b> Use HEX or RGB for most projects.</p>
+    </div>
+
+</body>
+</html>
