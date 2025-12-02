@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Add CSS in HTML – Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .heading {
+            text-align: center;
+            font-size: 32px;
+            color: #0066ff;
+            margin-bottom: 25px;
+        }
+        .note-box {
+            background: #fff;
+            padding: 15px;
+            border-left: 5px solid #0066ff;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+        code {
+            background: #eee;
+            padding: 6px 10px;
+            display: block;
+            margin-top: 10px;
+            border-radius: 5px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="heading">How to Add CSS in HTML (Notes)</h1>
+
+    <!-- 1: Inline CSS -->
+    <div class="note-box">
+        <h2>1️⃣ Inline CSS</h2>
+        <p>CSS added directly inside the HTML element using the <b>style</b> attribute.</p>
+
+        <code>
+&lt;p style="color: red; font-size: 20px;"&gt;
+    This is inline CSS
+&lt;/p&gt;
+        </code>
+
+        <p><b>Use when:</b> You need quick, one-line styling (not for big projects).</p>
+    </div>
+
+    <!-- 2: Internal CSS -->
+    <div class="note-box">
+        <h2>2️⃣ Internal CSS</h2>
+        <p>CSS written inside the &lt;style&gt; tag in the &lt;head&gt; section of the HTML page.</p>
+
+        <code>
+&lt;head&gt;
+    &lt;style&gt;
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;h1&gt;This uses internal CSS&lt;/h1&gt;
+        </code>
+
+        <p><b>Use when:</b> You want styling for one single HTML file.</p>
+    </div>
+
+    <!-- 3: External CSS -->
+    <div class="note-box">
+        <h2>3️⃣ External CSS</h2>
+        <p>CSS written in a separate <b>.css</b> file and linked to HTML using the &lt;link&gt; tag.</p>
+
+        <code>
+/* style.css */
+h2 {
+    color: green;
+    font-size: 28px;
+}
+        </code>
+
+        <code>
+<!-- Inside HTML -->
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;h2&gt;This uses external CSS&lt;/h2&gt;
+        </code>
+
+        <p><b>Use when:</b> You want clean code, reusable styles, and professional projects.</p>
+    </div>
+
+    <!-- 4: Summary Table -->
+    <div class="note-box">
+        <h2>4️⃣ Summary (Quick Revision)</h2>
+
+        <code>
+Inline CSS   → style="" inside HTML tag  
+Internal CSS → &lt;style&gt; in &lt;head&gt;  
+External CSS → separate .css file linked using &lt;link&gt;  
+        </code>
+
+        <p><b>Best Practice:</b> Always use <b>External CSS</b> for real projects.</p>
+    </div>
+
+</body>
+</html>
