@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Backgrounds Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #0077cc;
+            margin-bottom: 25px;
+        }
+        .box {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            border-left: 5px solid #0077cc;
+        }
+        code {
+            background: #eee;
+            padding: 7px 10px;
+            border-radius: 5px;
+            display: block;
+            margin-top: 10px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="title">CSS3 Backgrounds (Notes)</h1>
+
+    <!-- 1. background-color -->
+    <div class="box">
+        <h2>1️⃣ background-color</h2>
+        <p>Sets the background color of an element.</p>
+
+        <code>
+background-color: lightblue;
+background-color: #ffcc00;
+background-color: rgb(255, 0, 0);
+        </code>
+    </div>
+
+    <!-- 2. background-image -->
+    <div class="box">
+        <h2>2️⃣ background-image</h2>
+        <p>Used to set an image as background.</p>
+
+        <code>
+background-image: url("image.jpg");
+        </code>
+
+        <p>Works with gradients also:</p>
+
+        <code>
+background-image: linear-gradient(red, yellow);
+background-image: radial-gradient(circle, blue, green);
+        </code>
+    </div>
+
+    <!-- 3. background-repeat -->
+    <div class="box">
+        <h2>3️⃣ background-repeat</h2>
+        <p>Controls whether the background image repeats or not.</p>
+
+        <code>
+background-repeat: repeat;        /* Default */
+background-repeat: no-repeat;     /* No repeat */
+background-repeat: repeat-x;      /* Repeat horizontally */
+background-repeat: repeat-y;      /* Repeat vertically */
+        </code>
+    </div>
+
+    <!-- 4. background-size -->
+    <div class="box">
+        <h2>4️⃣ background-size</h2>
+        <p>Defines the size of the background image.</p>
+
+        <code>
+background-size: auto;       /* Default */
+background-size: cover;      /* Fill area, maintain ratio */
+background-size: contain;    /* Fit inside box */
+background-size: 100% 100%;  /* Stretch */
+        </code>
+    </div>
+
+    <!-- 5. background-position -->
+    <div class="box">
+        <h2>5️⃣ background-position</h2>
+        <p>Sets the starting position of a background image.</p>
+
+        <code>
+background-position: left top;
+background-position: center center;
+background-position: right bottom;
+background-position: 50% 50%;
+        </code>
+    </div>
+
+    <!-- 6. background-attachment -->
+    <div class="box">
+        <h2>6️⃣ background-attachment</h2>
+        <p>Defines if the background scrolls with page or stays fixed.</p>
+
+        <code>
+background-attachment: scroll;   /* Default */
+background-attachment: fixed;    /* Stays in one place */
+background-attachment: local;    /* Scrolls with element */
+        </code>
+    </div>
+
+    <!-- 7. background-clip -->
+    <div class="box">
+        <h2>7️⃣ background-clip</h2>
+        <p>Controls where the background is painted.</p>
+
+        <code>
+background-clip: border-box;   /* Default */
+background-clip: padding-box;
+background-clip: content-box;
+        </code>
+    </div>
+
+    <!-- 8. background-origin -->
+    <div class="box">
+        <h2>8️⃣ background-origin</h2>
+        <p>Controls background positioning area.</p>
+
+        <code>
+background-origin: padding-box;   /* Default */
+background-origin: border-box;
+background-origin: content-box;
+        </code>
+    </div>
+
+    <!-- 9. Shorthand -->
+    <div class="box">
+        <h2>9️⃣ Background Shorthand</h2>
+        <p>You can combine all properties in one line.</p>
+
+        <code>
+background: 
+    url("bg.jpg") 
+    no-repeat 
+    center/cover 
+    fixed;
+        </code>
+
+        <p>Order can vary but usually:</p>
+
+        <code>
+background: color image repeat position / size attachment;
+        </code>
+    </div>
+
+    <!-- 10. Summary -->
+    <div class="box">
+        <h2>🔟 Quick Summary</h2>
+
+        <code>
+background-color      → sets color  
+background-image      → sets image or gradient  
+background-repeat     → repeat / no-repeat  
+background-size       → cover / contain / auto  
+background-position   → image location  
+background-attachment → fixed or scroll  
+background-clip       → painting area  
+background-origin     → positioning area  
+background (shorthand)
+        </code>
+    </div>
+
+</body>
+</html>
