@@ -1,16 +1,12 @@
-/* Arithemtic operators */ // done
+/* Arithemtic operators */ 
 
-let n1 = 3;
-let n2 = 4;
 
-let mul = n1 * n2;
-let dev = n1 / n2;
-let sum1 = n1 + n2;
-let sub1 = n1 - n2;
-let expo = n1 ** n2;
-console.log('expo:', expo);
-// console.log(' sum1:', sum1);
-// console.log(' sub1:', sub1);
-// console.log(' dev:', dev);
-// console.log(' mul:', mul);
-//% modulus
+let a = 20;
+let b = 6;
+
+console.log ("a + b =", a + b);
+console.log ("a - b =", a - b);
+console.log("a * b = ", a * b );
+console.log(" a / b = ", a / b );
+console.log ("a % b = ", a % b ); // modulus
+console.log ( " a ** b = ", a ** b ); //exponantial
