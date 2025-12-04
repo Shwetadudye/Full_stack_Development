@@ -13,3 +13,4 @@ console.log('expo:', expo);
 // console.log(' sub1:', sub1);
 // console.log(' dev:', dev);
 // console.log(' mul:', mul);
+//% modulus
