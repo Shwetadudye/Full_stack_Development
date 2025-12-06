@@ -54,5 +54,68 @@ else {
     }*/
 
         // Check if a given **year is a leap year** or not.
-        
 
+        /* let year = 2025 ;
+
+         if (year % 400 ===0) {
+            console.log(year,"is leap year");
+         }
+         else if ( year %100 ===0){
+            console.log(year,"is not leap year");
+         }
+         else if (year % 4 ===0){
+            console.log (year,"is leap year");
+         }
+         else {
+            console.log(year,"not a leap year")
+         }
+*/
+
+  /* A student’s score is given. Print the **grade** based on:
+   - `90–100` → A
+   - `80–89` → B
+   - `70–79` → C
+   - `60–69` → D
+   - `below 60` → F */
+      
+   /*let grade = 67;
+
+   if(grade >= 90 && grade <=100 ){
+     console.log (" A");
+   } 
+   else if (grade >= 80 && grade <=89){
+    console.log ("B");
+   }
+   else if (grade>=70 && grade <=79){
+    console.log ("c");
+   }
+   else if (grade>=60 && grade  <=69){
+     console.log ("D")
+   }
+   else {
+    console.log ("F")
+   } */
+
+    /*7. Categorize a person by age:
+   - `0–12` → Child
+   - `13–19` → Teen
+   - `20–59` → Adult
+   - `60+` → Senior*/
+
+  /* let age = 88 ;
+
+   if (age >= 0 && age <=12){
+    console.log("child");
+   }
+   else if (age >=13 && age <=19){
+    console.log("Teen");
+   }
+   else if(age >=20 && age<= 59){
+    console.log("Adult");
+   }
+   else{
+    console.log("Senior")
+   }
+   */
+
+   // Check if a given character is a **vowel or consonant**.
