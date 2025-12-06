@@ -132,3 +132,40 @@ else {
    } */
 
     // Check if a number is **divisible by both 3 and 5**.
+
+  /*  let num = 45 ;
+    
+
+    if(num % 3===0 && num %5 ===0){
+        console.log(num + " is divisible by both 3 and 5");
+    }
+    else if(num % 3 ===0){
+        console.log(num + " is divisible by 3");     
+    }
+    else if (num %5 ===0){
+        console.log(num +"is divisible by 5");
+    }
+    else{
+        console.log("num is not divisible by 3 and 5")
+    } */
+
+
+        /*A temperature is given. Print:
+
+- `≤ 10°C` → Cold
+- `11–25°C` → Pleasant
+- `>= 25°C` → Hot
+
+---*/
+
+let temp = 18;
+
+if (temp <= 10){
+    console.log("Cold");
+}
+else if (temp >= 11 && temp<= 25 ){
+    console.log("Pleasant");
+}
+else{
+    console.log("Hot");
+}
