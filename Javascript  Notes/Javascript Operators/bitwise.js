@@ -28,3 +28,11 @@ console.log(" and:", and);
 
 //let NOT= ~num77;
 //console.log('NOT',NOT);
+
+/* Type operators */
+
+/*let str = 'Shweta';
+console.log(' str:', typeof str);
+
+let num = 8;
+console.log(' num:', typeof num);*/
