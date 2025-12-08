@@ -2,6 +2,6 @@
 
 let number = 10;
 
-for(i=1;i<=number;i++){
+for(let i=1;i<=number;i++){
     console.log(i);
 }
