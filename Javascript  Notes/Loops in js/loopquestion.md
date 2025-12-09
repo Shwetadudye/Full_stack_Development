@@ -16,8 +16,8 @@
 10. Print the factorial of a given number.  
 
 ---
-
-## 🟡 Intermediate Practice
+  
+## 🟡 Intermediate Practice (while loop)
 1. Print the reverse of a given number (e.g., `123 → 321`).  
 2. Print the sum of digits of a given number (e.g., `432 → 9`).  
 3. Check if a given number is prime using loops.  
@@ -31,7 +31,7 @@
 
 ---
 
-## 🔴 Advanced Practice (Challenging)
+## 🔴 Advanced Practice (Challenging)(nested loop)
 1. Print all prime numbers between 1 and 100.  
 2. Print the sum of all prime numbers between 1 and 200.  
 3. Print all Armstrong numbers between 1 and 1000 (e.g., `153 = 1³+5³+3³`).  
@@ -41,4 +41,4 @@
 7. Print a diamond pattern using stars.  
 8. Print the factors of a given number.  
 9. Print the HCF and LCM of two numbers using loops.  
-10. Generate Pascal’s Triangle using nested loops.  
+10. Generate Pascal’s Triangle using nested loops.
