@@ -19,8 +19,8 @@ background (shorthand) → combines all */
     
     /* The background-image property is used to set one or more images as the background of an HTML element.
     It can be applied to the whole page (body) or to a specific element (div, p, etc.). */
-    background-image: url(../image/GT\ 650.jpg);
-    background-repeat: no-repeat;
+    background-image: url(car.jpg);
+    background-repeat:no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size:auto;
 }
