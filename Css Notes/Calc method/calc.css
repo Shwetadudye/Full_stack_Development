@@ -1,0 +1,45 @@
+/* The calc() function lets you perform calculations to set CSS property values.
+You can use + , - , * , / operators inside it.
+Useful when you want dynamic sizing (mixing %, px, em, etc.). */
+
+/* You can use +, -, *, /.
+✔ You must include spaces around operators (✅ 10px + 5% ❌ 10px+5%).
+✔ Can combine different units (px, %, em, vw, etc.).
+✔ Works with properties like width, height, margin, padding, font-size, position values, etc. */
+
+
+:root {
+    --width: 100px;
+    --width-1: 100%;
+    --height: 100px;
+    --height-1: 100px;
+    --red: red;
+    --blue: blue;
+    --gray: gray;
+}
+
+.container {
+    border: 1px solid gray;
+    width: 100px;
+    height: 150px;
+    background-color: blue;
+}
+
+.container_1 {
+    border: 1px solid green;
+    background-color: purple;
+    width: calc(var(--width-1) - var(--width));
+    height: calc(var(--height-1) + var(--height));
+}
+
+.btn-r {
+    color: var(--red);
+    background: var(--gray);
+    border: none;
+}
+
+.btn-b {
+    color: var(--blue);
+    background: var(--gray);
+    border: none;
+}
