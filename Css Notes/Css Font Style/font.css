@@ -1,0 +1,72 @@
+/* Font styling in CSS controls how text looks on a webpage.
+The main font-related properties are:
+font-family → sets the typeface (Arial, Verdana, etc.).
+font-style → sets normal, italic, or oblique.
+font-weight → sets boldness (normal, bold, 100–900).
+font-variant → sets small-caps style.
+font-size → sets text size.
+line-height → sets spacing between lines.
+font (shorthand) → sets all in one line.
+
+font-style → normal | italic | oblique
+✔ font-weight → normal | bold | lighter | 100–900
+✔ font-size → px, em, %, rem
+✔ font-family → primary + fallback fonts
+✔ font (shorthand) → combines style, weight, size, line-height, and family */
+
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Bitcount Grid Double Ink;
+}
+
+body {
+    border: 1px solid purple;
+}
+
+.content {
+    text-transform: lowercase;
+    height: 600px;
+    border: 3px solid green;
+}
+
+h1,
+p {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 90px;
+    text-align: center;
+    border: 3px solid gold;
+}
+
+.child-2 {
+    text-transform: inherit;
+    color: aquamarine;
+    background-color: aqua;
+}
+
+.child-3 {
+    text-transform: uppercase;
+}
+
+.child-4 {
+    text-transform: unset;
+}
+
+h1 {
+    color: red;
+    background-color: black;
+}
+
+p {
+    color: blue;
+    background-color: yellow;
+}
+
+/* height → controls how tall an element is.
+width → controls how wide an element is.
+Can be set in px, %, em, rem, vh, vw, auto.
+Default → auto (browser decides based on content). */
