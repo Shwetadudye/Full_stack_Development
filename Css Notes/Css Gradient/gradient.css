@@ -1,0 +1,63 @@
+/* A gradient is a smooth transition between two or more colors.
+Instead of using images, CSS3 lets us create background gradients directly with code.
+Two main types:
+Linear Gradient → colors flow in a straight line.
+Radial Gradient → colors spread from the center outward.
+(Extra) Conic Gradient → colors rotate around a center point. */
+
+/* background: linear-gradient(direction, color1, color2, ...) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 300px;
+    background: linear-gradient(to bottom right , gray ,pink, green);
+    padding: 40px 0;
+}
+
+h1 {
+    text-transform: capitalize;
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(to right bottom, blue, red, yellow);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+                /* Radial Gradient */
+/* background: radial-gradient(shape size, color1, color2, ...) */
+
+.Radial {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, yellow, rgba(180, 118, 3, 0.411), blue);
+    border: 2px solid black;
+    margin-top: 200px;
+    margin-left: 600px;
+}                
+
+            /* conic Gradients */
+/* background: conic-gradient(color1, color2, ...) */
+
+.conic {
+    margin-top: 200px;
+    margin-left: 600px;
+    width: 200px;
+    height: 200px;
+    background: conic-gradient(
+        from 0deg at center,
+        red,
+        yellow,
+        green,
+        blue,
+        red
+    );
+    border-radius: 50%;
+    border: 2px solid black;
+
+}
