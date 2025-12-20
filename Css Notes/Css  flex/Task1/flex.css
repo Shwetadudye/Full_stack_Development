@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    padding: 23px;
+    gap : 10px ;
+    flex-wrap: wrap;
+    width : 30%;
+}
+
+.box{
+    background-color: orange;
+    color: aliceblue;
+    text-align: left;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 20px;
+
+}
+
+.child-1,.child-2 , .child-3{
+    flex-grow: 0.28;
+}
+
+.child-4 , .child-6 , .child-9{
+    flex-grow: 0.3;
+}
+.child-5 , .child-10{
+    flex-grow: 0.3;
+}
+.child-7 ,.child-8{
+    flex-grow: 0.3;
+}
