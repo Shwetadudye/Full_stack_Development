@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Adds shadow behind text.
+text-shadow: h-offset v-offset blur-radius color */
+/* Adds shadow behind elements (like div, buttons, etc.).
+box-shadow: h-offset v-offset blur-radius spread-radius color; */
+
+
+.div-shadow,
+ .drop-shadow {
+    width: 40%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.div-shadow > img {
+    width: 40%;
+    height: 300px;
+    box-shadow: 90px 120px 700px 20px black;
+    margin: 40px;
+}
+
+/* CSS3 Text
+Common Properties:
+color → Text color
+text-align → left, right, center, justify
+text-decoration → underline, overline, none
+text-transform → uppercase, lowercase, capitalize
+letter-spacing, word-spacing, line-height → spacing adjustments */
+
+h1 {
+    text-shadow: 8px -10px 3px pink;
+    margin: 180px;
+    padding: 20px;
+}
+body {
+    border: 2px solid red;
+}
+
+img {
+    width: 390px;
+    height: 300px;
+    filter: drop-shadow(15px 15px 20px blue);
+}
+
+/* CSS3 Fonts
+CSS3 allows us to use custom fonts with @font-face or Google Fonts.
+CSS3 Shadows → text-shadow & box-shadow.
+CSS3 Text → color, align, transform, decoration, spacing, etc.
+CSS3 Fonts → system fonts, @font-face, Google Fonts. */
