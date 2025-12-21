@@ -1,0 +1,62 @@
+
+h1{
+   font-size: 2rem;
+   margin: 20px 0;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+}
+
+body{
+    background-color: #f238c0;
+    text-align: center;
+    height: 50vh;
+    margin: 0;
+    padding: 0;
+}
+.table{
+    display: grid;
+    grid-template-columns: repeat(18, 60px);
+    gap:10px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    height: 60px;
+    width: 65px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+
+.blue{
+    background-color: blue;
+}
+.orange{
+    background-color: orange;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+.white{background-color: aliceblue;}
+
+.purple{
+    background-color: purple;
+}
+
+.element{
+  transition: transform 0.5s ease;
+}
+
+.element:hover{
+ 
+  transform: scale(1.5);
+}
