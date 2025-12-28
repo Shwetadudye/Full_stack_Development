@@ -1,0 +1,30 @@
+.mainContainer{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border:1px solid black;
+            margin-top: 30px;
+        }
+        .logo img{
+            height: 35px;
+        } 
+        .search input{
+            width: 189%;
+            height: 43px;
+            text-align: center;
+            background: #7d79790f;
+            border: none;
+        }
+        .navigationTab{
+            display: flex;
+            font-size: xx-large;
+            gap: 20px;
+        }
+        .search{
+            position: relative;
+        }
+        .search span i{
+            position: absolute;
+            top: 25%;
+            left: 65%;
+        }
