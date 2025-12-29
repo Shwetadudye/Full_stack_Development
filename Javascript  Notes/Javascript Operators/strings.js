@@ -9,7 +9,7 @@
 
 let name8 = 'Shweta';
 
-let sur_name = 'Dudya';
+let sur_name = 'Dudye';
 
 let full_name = name8 + ' ' + sur_name;
 
