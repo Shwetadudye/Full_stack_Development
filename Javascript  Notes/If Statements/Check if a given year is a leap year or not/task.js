@@ -1,4 +1,4 @@
-let year = 2025 ;
+let year = 1800 ;
 
          if (year % 400 ===0) {
             console.log(year,"is leap year");
