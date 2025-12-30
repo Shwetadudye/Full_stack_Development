@@ -1,4 +1,4 @@
-let AGE = 100;
+let AGE = 10;
 
 switch (true) {
     case AGE >= 18 && AGE < 56:
@@ -7,7 +7,7 @@ switch (true) {
          case AGE >= 56 && AGE < 75:
         console.log('Null for vote');
         break;
-         case AGE >= 18:
+         case AGE <= 18:
         console.log(' Not Eligible for vote');
         break;
     default:
