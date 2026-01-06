@@ -15,7 +15,7 @@ for (let i = 0 ; i<100 ; i++){
 }*/
 
 // for in loop 
-/*let obj ={
+let obj ={
     name : "shweta",
     age : "23",
     pass: "yes",
@@ -27,12 +27,12 @@ for (const key in obj) {
     console.log(element);
     
     
-}*/
+}
 
 
 // for of loop 
 
-/*let obj={
+/*/let obj={
     name : "shweta",
 }
 
@@ -52,8 +52,8 @@ while(i<6){
 }*/
 
 // do while loop
-let i =10;
-do {
-    console.log(i)
-    i++;
-} while (i<6);
+//let i =10;
+//do {
+   // console.log(i)
+   // i++;
+//} while (i<6);

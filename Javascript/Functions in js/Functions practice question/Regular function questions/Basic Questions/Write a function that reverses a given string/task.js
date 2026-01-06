@@ -3,7 +3,7 @@
 function reverse(str){
      let reverse= " ";
 
-     for (let i=str.length-1; i>=0;i--){
+     for (let i=str.length-1; i>=0;i--){ // array index start with 0 
         reverse += str[i];
      }return reverse;
 }
