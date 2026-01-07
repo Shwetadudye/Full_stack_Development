@@ -2,9 +2,9 @@
 let number =22;
 function num(){
     if(number %2===0){
-        console.log(number + " even number");
+        return number + " even number";
     }else{
-        console.log(number + " odd number");
+        return number + " odd number" ;
     }
 }
 num();

@@ -19,7 +19,7 @@ let object = {
 //console.log(object.school);
 
 //console.log(object.hobbies[2]);
-//console.log(object.school.XII);0
+//console.log(object.school.XII);
 console.log(typeof object);
 
 for(let key in object){
