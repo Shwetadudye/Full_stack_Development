@@ -1,3 +1,7 @@
+// function always return something ...if not used return than it show undefined
+
+
+
 let n1 = 1;
 let n2 = 2;
 let n3 = 3;
