@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do app with Local Storage</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body onload="appenData()">
+    <div class="parent-container">
+        <div class="To-do-container"></div>
+        <h1>Create Your Todo List</h1>
+        <div class="todo-content">
+            <input type="text" class="input_box" placeholder="What are your task for today?" onchange="myTodo(event)">
+            <button type="button" onclick="myTodo()">ADD</button>
+        </div>
+        <div class="todoDetails"></div>
+    </div>
+
+    <div class="delete_model_container">
+        <div class="moal_para">
+            <p>Your data will permanently deleted</p>
+            <p id="para_2">Do You really want to delete this</p>
+        </div>
+        <div class="modal_btn_container">
+            <button class="yes_btn">yes</button>
+            <button class="no_btn">No</button>
+        </div>
+    </div>
+    
+</body>
+<script src="todo.js"></script>
+</html>
