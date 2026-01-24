@@ -125,7 +125,7 @@ function openModal() {
 
 // function for open login page when click the modal Continue button
 function openLoginPage() {
-    window.location.href = "./login.html"
+    window.location.href = "login.html"
 }
 let openLogin = document.querySelector("#continue_btn");
 openLogin.addEventListener("click", openLoginPage);

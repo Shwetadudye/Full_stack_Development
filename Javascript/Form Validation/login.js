@@ -23,9 +23,6 @@ function loginValidation(event) {
     let signupData = JSON.parse(localStorage.getItem("userData"));
     console.log(signupData);
 
-
-    
-
     if (signupData) {
         if (signupData.email === User_Email && signupData.password === User_Password) {
             openSignupModal(signupData);
@@ -67,3 +64,5 @@ function openSignupModal(data) {
 document.getElementById("closeModal").addEventListener("click", function () {
     document.getElementById("signupModal").style.display = "none";
 });
+
+
