@@ -22,7 +22,7 @@ let person3 = {
 
 // call with Constructor
 let person={
-    name:"Shaad gavo boy"
+    name:"Omkar"
 }
 class PersonDetails{
     constructor(age,city){

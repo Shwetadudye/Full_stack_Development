@@ -10,21 +10,25 @@ function myFunction3(age,city){
     this.city=city;
 }
 
-let mybind = myFunction.bind(person7,42,'pune')
+let mybind = myFunction3.bind(person7,42,'pune')
 mybind()
-
-
+console.log(person7);
 
 // bind with class
-let persons={
-    name:"Shaad gavo boy"
-}
-class PersonDetails{
-    constructor(age,city){
-        this.age=age,
-        this.city=city
+
+let persons = {
+    name: "shweta"
+};
+
+class PersonDetails {
+    setDetails(age, city) {
+        this.age = age;
+        this.city = city;
     }
 }
-let obj = new PersonDetails
-let myBind=obj.setDetails.bind(persons,24,'pune')
-console.log(mybind())
+
+let obj = new PersonDetails();
+let myBind = obj.setDetails.bind(persons, 24, 'pune');
+myBind();
+
+console.log(persons);
