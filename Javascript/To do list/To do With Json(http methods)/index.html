@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Todos with JSON</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+
+</head>
+<body>
+    <div class="parent_Container">
+        <div class="todo_container">
+            <h1>Create your Todo-List</h1>
+            <div class="todo_content">
+                <input type="text" class="input_box" placeholder="What are your task for today?" onchange="myTodo()">
+                <button type="button" onclick="myTodo()">Add</button>
+            </div>
+            <div class="todoDetails"></div>
+        </div>
+    </div>
+
+    <div class="delete_modal_container">
+        <p>Do you really want to delete this?</p>
+        <div class="modal_btn_container">
+            <button type="button" class="yes_btn">Yes</button>
+            <button type="button" class="no_btn">No</button>
+        </div>
+    </div>
+
+</body>
+</html>
