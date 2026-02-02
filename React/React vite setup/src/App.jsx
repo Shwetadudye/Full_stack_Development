@@ -1,29 +1,40 @@
+import React, { useState} from'react';
 
 import './App.css'
 
-function App() {
+export function App(){
+  //hooks
+  const[count, setCount] = useState(0);
 
-  // logic syntax 
-  const data = [
-    "shweta" ,"mehfooz" ,"tejas" ,"vanshu"
-  ];
- //HOF = map,filter,reduce and forEach
+  const handleDec =()=>{
+    //setCount(count -1);
+    setCount((prev)=> prev -1);
+  };
+
+  const handleInc =()=> {
+    //setCount(count+1);
+    setCount((prev)=> prev+1);
+  };
+
+  // let count =0 ;
+
+  // const handleDec = () =>{
+  //   count--;
+  //   document.getElementById('count').innerText = `count ${count}`;
+  // };
+
+  // const handleInc = () => {
+  //   count++;
+  //   Document.getElementById('count').innerText = `count ${count}`;
+  // };
+
   return (
     <>
-    {/*html syntax */}
-    
-     {/*<h1>{data[0]}</h1>
-     <h1>{data[1]}</h1>
-     <h1>{data[2]}</h1>
-     <h1>{data[3]}</h1>*/}
-     
-    
-      
-     {data.map((el) => (
-        <h1>{el}</h1>
-      ))}
-    </>
-  )
+     <h1 id = "count">count {count}</h1>
+     <button onClick={handleDec}>dec</button>
+     <button onClick={handleInc}>Inc</button>
+     </>
+  );
 }
 
-export{App} ;
+ 
