@@ -7,13 +7,13 @@ export function App(){
   const[count, setCount] = useState(0);
 
   const handleDec =()=>{
-    //setCount(count -1);
-    setCount((prev)=> prev -1);
+    setCount(count -1);
+    //setCount((prev)=> prev -1);
   };
 
   const handleInc =()=> {
-    //setCount(count+1);
-    setCount((prev)=> prev+1);
+    setCount(count+1);
+    //setCount((prev)=> prev+1);
   };
 
   // let count =0 ;
