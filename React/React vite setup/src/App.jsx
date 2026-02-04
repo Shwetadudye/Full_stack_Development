@@ -29,7 +29,7 @@ export function App(){
   // };
 
   return (
-    <>
+    <>{/* fragment */}
      <h1 id = "count">count {count}</h1>
      <button onClick={handleDec}>dec</button>
      <button onClick={handleInc}>Inc</button>
