@@ -1,20 +1,20 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { apiData } from './utils/App';
+import { apiData}  from '../Components/utils/App';
 
-export const AxiosData = () =>{
-    const [AxiosData, setAxiosData] = useState ([]);
+export const ApiData = () =>{
+    const [ApiData, setAxiosData] = useState ([]);
 
     const getApi = async () => {
-        const res = await apiData.get('/products/2');
+        const res = await apiData.get('/posts/1');
         const resData = await res.data;
         setAxiosData((prev)=> [...prev, resData]);
     };
-    console.log(AxiosData);
+    console.log(ApiData);
 
     return(
         <>
-        <button onClick={getApi}>click</button>
+        <button onClick={getApi}>Post1</button>
         <div 
            style={{
             display: 'grid',
@@ -22,14 +22,12 @@ export const AxiosData = () =>{
             gap: '4em',
            }}
            >
-            {AxiosData.map((el)=>{
+            {ApiData.map((el)=>{
                 return(
                     <div key = {el.id}>
                         <h2>{el.id}</h2>
-                        <img width ="150" src={el.image} alt={el.category}/>
                         <h3>{el.title}</h3>
-                        <h4>{el.category}</h4>
-                        <h4>{el.description}</h4>
+                        <h4>{el.body}</h4>
                         </div>
                 );
             })}

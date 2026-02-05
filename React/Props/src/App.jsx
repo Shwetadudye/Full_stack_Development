@@ -18,7 +18,7 @@ import { AxiosData } from './Components/Axios'
     <h1 id="count">count {count}</h1>
     <Countes xyz={{ setCount , count}} />
     <Data props = {{ data }}/>
-    <AxiosData url = {API}/>
+    <AxiosData />
   
     </>
   )
