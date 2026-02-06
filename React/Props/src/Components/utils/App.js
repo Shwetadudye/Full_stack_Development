@@ -1,5 +1,5 @@
 import axios from 'axios'
 
-export const apiLink = axios.create({
-    baseURL:'https://jsonplaceholder.typicode.com/',
+export const apiData = axios.create({
+    baseURL:'https://fakestoreapi.com',
 });
