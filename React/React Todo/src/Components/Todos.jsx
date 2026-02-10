@@ -12,7 +12,7 @@ export const Todos = ({ props }) => {
 
   const handleEdits = (id) => {
     const editItems = todo.map((el) =>
-      el.id === id ? { ...el, isEdit:!el.isEdit } : el,
+      el.id === id ? { ...el, isEdit: true } : el,
     );
     setTodo(editItems);
   };
@@ -31,27 +31,54 @@ export const Todos = ({ props }) => {
     );
     setTodo(editItems);
   };
+
+  const Checked = (id)=>{
+    const updated = todo.map((el) =>
+    el.id === id ? { ...el, isChecked: !el.isChecked } : el);
+    setTodo(updated);
+    console.log(updated)
+  };
+
+  const selectAll=()=>{
+     const updated  = todo.map(el => ({...el, isChecked: true
+  }));
+  setTodo(updated );
+  console.log(updated)
+  }
+  const deselectAll = () => {
+    const updated = todo.map(el => ({...el,isChecked: false
+    }));
+    setTodo(updated);
+    console.log(updated)
+  };
+  const allChecked = todo.length > 0 && todo.every(el => el.isChecked);
+
+  const DeleteAll=()=>{
+    const deleteItems = todo.filter((el) => !el.isChecked);
+    setTodo(deleteItems);
+  }
+
   return (
     <>
-      <h1>list of todos</h1>
-
-      {/* {
-        todo && 
-      } */}
+    <div className='MainDiv'>
+      <h1>List of Todos</h1>
+      <button onClick={allChecked ? deselectAll : selectAll}>
+        {allChecked ? "Deselect All" : "Select All"}
+      </button>
+      <button onClick={DeleteAll}>Delete ALL</button>
+    </div>
 
       {todo.map((el) => {
         return (
           <div
             key={el.id}
-            style={{
-              width: '80%',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              margin: 'auto',
-            }}
+            className={`todo-item ${el.isChecked ? "completed" : ""}`}
           >
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={el.isChecked }
+              onChange={() => Checked(el.id)}
+            />
 
             {el.isEdit ? (
               <input
@@ -61,7 +88,7 @@ export const Todos = ({ props }) => {
                 onChange={(e) => setEditText(e.target.value)}
               />
             ) : (
-              <h1>{el.text}</h1>
+              <h4>{el.text}</h4>
             )}
 
             {el.isEdit ? (
