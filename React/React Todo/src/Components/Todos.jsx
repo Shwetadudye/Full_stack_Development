@@ -2,6 +2,9 @@ import { useState } from "react";
 
 
 export const Todos = ({props}) =>{
+  const [editText , setEditText] = useState('');
+  const [pinItems , setPinItems] = useState([]);
+
   const {todo, setTodo} = props;
 
   
@@ -28,21 +31,35 @@ export const Todos = ({props}) =>{
    const handleSelect = () =>{
     const selectAll = todo.map((el)=>{
       return{
-        ...el , isCompleted : !el.isCompleted,
+        ...el , isCompleted : true,
       };
     });
     setTodo(selectAll);
    };
 
    const handleSelectDelete = (id)=>{
-     const deleteselect = todo.filter((el)=> !el.isCompleted);
-   setTodo(deleteselect);};
+     const deleteselect = todo.filter((el)=> el.isCompleted !== trim );
+     setTodo(deleteselect);
+   };
 
    const changeInput = (id) =>{
     const changeValue = todo.map((el)=>
       el.id === id ? {...el, isCompleted:!el.isCompleted}:el,
     );
-    setTodo(changeValue)
+    setTodo(changeValue);
+   };
+
+   const handlePinItems =(id) =>{
+    /*id
+    old state [1,3,2] ..sorting
+
+    new state [2]*/
+
+    const pin_value = todo.filter((el)=> el.id ===id);
+    setPinItems((prev) => [...prev, ...pin_value]);
+
+    const unPin_value = todo.filter((el)=> el.id !==id);
+    setTodo(unPin_value);
    };
 
    if(todo.length ===0) {
@@ -59,8 +76,11 @@ export const Todos = ({props}) =>{
         </button>
         <button onClick={handleSelectDelete}>Delete All</button>
        </div>
+      
+       {/*Unpin*/}
 
-       {todo.map((el)=>{
+       <h1>Pin Items</h1>
+       {pinItems.map((el,i)=>{
         return(
           <div
           key={el.id}
@@ -71,8 +91,10 @@ export const Todos = ({props}) =>{
             alignItems : 'center',
             margin: 'auto',
           }}>
-      
+
             <input type="checkbox" onChange={()=>{changeInput(el.id);}} checked ={el.isCompleted} />
+     
+           <h3>{i+1}</h3>
 
             {el.isEdit ? (
               <input name="edit_items" type="text" defaultValue={el.text} onChange={(el)=> setEditText(el.target.value)}/>
@@ -91,9 +113,11 @@ export const Todos = ({props}) =>{
             <button onClick={()=> handleDelete(el.id)} style={{height: 'fit-content'}}>Delete</button>
             </>
            )}
-          </div>
+           <button onClick={() => handlePinItems(el.id)}>Pin</button>
+          </div> 
         );
-       })}
+       })} 
+
     </>
    );
 };
