@@ -62,7 +62,7 @@ export const Todos = ({props}) =>{
     setTodo(unPin_value);
    };
 
-   if(todo.length ===0) {
+   if(todo.length ===0 && pinItems.length===0) {
     return <h1>Please enter your data</h1>
    }
 
@@ -77,8 +77,6 @@ export const Todos = ({props}) =>{
         <button onClick={handleSelectDelete}>Delete All</button>
        </div>
       
-       {/*Unpin*/}
-
        <h1>Pin Items</h1>
        {pinItems.map((el,i)=>{
         return(
@@ -117,6 +115,48 @@ export const Todos = ({props}) =>{
           </div> 
         );
        })} 
+
+       <h3>Unpin Data</h3>
+          {todo.map((el,i)=>{
+            return(
+              <div 
+              key={el.id}
+              style={{
+                width: '80%',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                margin: 'auto'
+              }}>
+                <input type="checkbox" onChange={() =>{
+                  changeInput(el.id);
+                }}
+                checked={el.isCompleted}
+                 /> 
+                 <h3>{i+1}</h3>
+
+                 {el.isEdit ? (
+                  <input name="edit_items" type="text" defaultValue={el.text} onChange={(el) => setEditText(editText.target.value)}
+                    />        
+                   ):(
+                    <h1>{el.text}</h1>
+                   )}
+
+                             {el.isEdit ? (
+            <>
+            <button onClick={()=> handleCancel(el.id)} style={{height: 'fit-content'}}>Cancel</button>
+            <button onClick={()=> handleConfirm(el.id)} style={{height: 'fit-content'}}>Confirm</button>
+            </>
+           ) :(
+            <>
+            <button onClick={()=> handleEdits(el.id)} style={{height: 'fit-content'}}>Edit</button>
+            <button onClick={()=> handleDelete(el.id)} style={{height: 'fit-content'}}>Delete</button>
+            </>
+           )}
+           <button onClick={() => handlePinItems(el.id)}>Pin</button>
+          </div> 
+        );
+       })}
 
     </>
    );
