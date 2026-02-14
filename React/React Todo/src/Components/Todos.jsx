@@ -27,6 +27,14 @@ export const Todos = ({props}) =>{
     setTodo(editItems);
   };
 
+  const handleConfirm =(id) => {
+    if(editText.trim()=== '') return;
+    const editItems = todo.map((el)=>
+    el.id === id? { ...el, isEdit:false,text:editText}:el,
+  )
+  setTodo(editItems);
+  };
+
   // handle select all 
    const handleSelect = () =>{
     const selectAll = todo.map((el)=>{
@@ -38,7 +46,7 @@ export const Todos = ({props}) =>{
    };
 
    const handleSelectDelete = (id)=>{
-     const deleteselect = todo.filter((el)=> el.isCompleted !== trim );
+     const deleteselect = todo.filter((el)=>  !el.isCompleted);
      setTodo(deleteselect);
    };
 
@@ -48,21 +56,34 @@ export const Todos = ({props}) =>{
     );
     setTodo(changeValue);
    };
+    // pinned and unpinned
 
-   const handlePinItems =(id) =>{
-    /*id
-    old state [1,3,2] ..sorting
+    const handlePinItems = (id) =>{
+      const pinitems = todo.map((el)=>
+        el.id=== id? {...el, ispin: true}:el,
+      );
+      setPinItems(pinitems)
+    }
 
-    new state [2]*/
 
-    const pin_value = todo.filter((el)=> el.id ===id);
-    setPinItems((prev) => [...prev, ...pin_value]);
 
-    const unPin_value = todo.filter((el)=> el.id !==id);
-    setTodo(unPin_value);
-   };
 
-   if(todo.length ===0 && pinItems.length===0) {
+  //  const handlePinItems =(id) =>{
+  //   /*id
+  //   old state [1,3,2] ..sorting
+
+  //   new state [2]*/
+
+  // //   const pin_value = todo.filter((el)=> el.id ===id);
+  // //   setPinItems((prev) => [...prev, ...pin_value]);
+
+  // //   const unPin_value = todo.filter((el)=> el.id !==id);
+  // //   setTodo(unPin_value);
+  //  };
+
+
+
+   if(todo.length ===0 && pinItems.length ===0) {
     return <h1>Please enter your data</h1>
    }
 
@@ -89,16 +110,15 @@ export const Todos = ({props}) =>{
             alignItems : 'center',
             margin: 'auto',
           }}>
-
-            <input type="checkbox" onChange={()=>{changeInput(el.id);}} checked ={el.isCompleted} />
-     
+           
            <h3>{i+1}</h3>
+            <input type="checkbox" onChange={()=>{changeInput(el.id);}} checked ={el.isCompleted} />
 
             {el.isEdit ? (
               <input name="edit_items" type="text" defaultValue={el.text} onChange={(el)=> setEditText(el.target.value)}/>
             ):(
               <h1>{el.text}</h1>
-            )}
+            ) }
 
            {el.isEdit ? (
             <>
@@ -115,48 +135,6 @@ export const Todos = ({props}) =>{
           </div> 
         );
        })} 
-
-       <h3>Unpin Data</h3>
-          {todo.map((el,i)=>{
-            return(
-              <div 
-              key={el.id}
-              style={{
-                width: '80%',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                margin: 'auto'
-              }}>
-                <input type="checkbox" onChange={() =>{
-                  changeInput(el.id);
-                }}
-                checked={el.isCompleted}
-                 /> 
-                 <h3>{i+1}</h3>
-
-                 {el.isEdit ? (
-                  <input name="edit_items" type="text" defaultValue={el.text} onChange={(el) => setEditText(editText.target.value)}
-                    />        
-                   ):(
-                    <h1>{el.text}</h1>
-                   )}
-
-                             {el.isEdit ? (
-            <>
-            <button onClick={()=> handleCancel(el.id)} style={{height: 'fit-content'}}>Cancel</button>
-            <button onClick={()=> handleConfirm(el.id)} style={{height: 'fit-content'}}>Confirm</button>
-            </>
-           ) :(
-            <>
-            <button onClick={()=> handleEdits(el.id)} style={{height: 'fit-content'}}>Edit</button>
-            <button onClick={()=> handleDelete(el.id)} style={{height: 'fit-content'}}>Delete</button>
-            </>
-           )}
-           <button onClick={() => handlePinItems(el.id)}>Pin</button>
-          </div> 
-        );
-       })}
 
     </>
    );

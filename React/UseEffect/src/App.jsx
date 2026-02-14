@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 // useeffect : useeffect handle side effect and asynchronous behaviour 
-// useeffect have 2 parameter : 1. ()=>{} callbacke func and 2. dependency
+// useeffect have 2 parameter : 1. ()=>{} callbacke func and 2. dependency [___]
 
  export function App() {
   const [count , setCount] = useState(0);

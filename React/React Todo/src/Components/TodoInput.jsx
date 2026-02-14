@@ -4,6 +4,7 @@ import {Todos} from './Todos';
 export const TodoInput = () => {
     const [text, setText] = React.useState('');
     const [todo, setTodo] = React.useState([]);
+    
 
 
     const handleAdd = () => {
@@ -11,10 +12,11 @@ export const TodoInput = () => {
 
         const data = {
             id:Date.now(),
+            elementid: todo.length+1, 
             text,
             isEdits: false,
             isCompleted: false,
-            //isPin : false,
+            isPin : false,
         };
 
         setTodo((prev) =>[...prev, data]);
