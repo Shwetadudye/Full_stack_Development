@@ -1,7 +1,7 @@
 import { ContextValue } from "../Context/ContextProvider";
 
 import { useContext } from "react";
-import {TodoList } from './TodoList'
+
 
 export const TodoInput =()=>{
     const  {text ,setText,todo,setTodo} = useContext(ContextValue);

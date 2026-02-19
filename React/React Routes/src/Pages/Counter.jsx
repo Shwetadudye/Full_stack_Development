@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { CounterValContext } from "../Context/CounterContext"
+import { Button } from "../Components/Button";
 
 
 export const Counter =()=>{
