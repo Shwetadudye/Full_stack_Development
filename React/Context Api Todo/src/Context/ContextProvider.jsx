@@ -3,8 +3,8 @@
  export const ContextValue = createContext(null); 
 
  export const ContextTodo =  ({children}) =>{
-    const[text, setText] = React.useState('');
-    const[todo, setTodo]= React.useState([])
+    const[text, setText] = useState('');
+    const[todo, setTodo]= useState([])
 
     return(
         <ContextValue.Provider value={{text ,setText,todo,setTodo}}>
