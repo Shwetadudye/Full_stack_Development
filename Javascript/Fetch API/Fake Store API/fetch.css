@@ -1,0 +1,68 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main container */
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Card styling */
+#container > div {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+#container > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Product ID */
+#container h3:first-child {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* Product image */
+#container img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Title */
+#container h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+/* Price */
+#container p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2ecc71;
+  margin-bottom: 8px;
+}
+
+/* Description */
+#container h3:last-child {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
