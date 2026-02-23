@@ -5,13 +5,16 @@ import {App} from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { TodosContext } from './Context/TodoContext.jsx'
 import { CounterContext } from './Context/CounterContext.jsx'
+import { AuthContext } from './Context/AuthProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
+  <AuthContext>
     <TodosContext>
       <CounterContext>
         <App />
       </CounterContext>
     </TodosContext>
+    </AuthContext>
   </BrowserRouter>,
 );

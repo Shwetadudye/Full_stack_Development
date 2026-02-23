@@ -6,6 +6,8 @@ export const Navbar = () => {
         { to: '/about', name: 'About' },
         { to: '/counter', name: 'Counter' },
         { to: '/todo', name: 'Todo' },
+        { to:'/user', name:'user'},
+        { to: '/login', name:'login'},
     ];
     return (
         <div style={{
@@ -21,6 +23,7 @@ export const Navbar = () => {
                     </NavLink>
                 )
             })}
+            <button onClick={()=> setAuth(false0)}>logout</button>
         </div>
     )
 }
