@@ -6,7 +6,9 @@ import { Route, Routes } from 'react-router-dom';
 import { PrivateRoutes } from '../Components/PrivateRouters';
 import {User} from '../Pages/User'
 import {Login} from '../Pages/Login'
-
+import { SinglePage } from '../Pages/Singlepage';
+// serach params query select le liye use krte hsi 
+// params 
 export const AllRoutes =()=>{
     return(
         <Routes>
@@ -20,6 +22,12 @@ export const AllRoutes =()=>{
                 <User />
             </PrivateRoutes>}>
             </Route>
+            <Route path='users/:paramId'
+              element={
+                <PrivateRoutes>
+                    <SinglePage />
+                </PrivateRoutes>
+              }></Route>
             <Route path = '/login' element={<Login />}></Route>
         </Routes>        
     )

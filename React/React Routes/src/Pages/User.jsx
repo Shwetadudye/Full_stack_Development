@@ -1,22 +1,44 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {getData} from '../Api/FetchData'
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
+import { AuthValContext } from '../Context/AuthProvider';
 
-
+const CalcPageVal = (val)=>{
+    let vals= +val;
+    if(typeof vals==='number' && vals<=0 && !vals){
+        return(vals=1);
+    }
+    return vals;
+}
 export const User =()=>{
+    const {loading , setLoading, error , setError} = useContext(AuthValContext);
     const [user, setUser] = React.useState([]);
+    const [res, setRes] = React.useState({});
+    const [ searchParam , setSearchParam]= useSearchParams();
+    console.log(searchParam.get('page'));
 
+    let initialPage = CalcPageVal(searchParam.get('page'));
+    const [page, setPage]= React.useState(initialPage);
 
     React.useEffect(()=>{
-        getData('users')
+        getData('/users?page=${page}')
         .then((res)=>{
-            console.log(res);
-            return setUser(res.data);
+            setError(false);
+            setLoading(true);
+            setRes(res);
+            setUser(res.data);
+            setLoading(false);
         })
         .catch((error)=> console.log(error));
-    },[]);
+        setError(true);
+    },[page]);
 
-    console.log(user);
+    if(loading){
+        return <h1>Loading...</h1>;
+    }
+    if(error){
+        return <h1>Something Went Wrong</h1>;
+    }
 
     return(
         <>
@@ -25,17 +47,23 @@ export const User =()=>{
         {user && 
         user.map((items)=>{
             return(
-                <div style={{display:'flex', justifyContent:'center',alignItems:'center', flexDirection:'column', gap:'1rem',}}
-                key={items.id}>
+                <Link style={{display:'flex', justifyContent:'center',alignItems:'center', flexDirection:'column', gap:'1rem',}}
+                key={items.id}
+                to={`/users/${items.id}`}>
                 <img src={items.avatar} alt={items.first_name}/>
                 <span>{items.id}</span>
                 <span>{items.email}</span>
                 <p>
                     name{items.first_name} -{items.last_name}
                 </p>
-                </div>
+                </Link>
             )
         })}
+
+        <button disabled={page <=1} onClick={()=>setPage((prev)=>prev-1)}>Prev</button>
+        <span style={{padding:'1rem'}}>{page}</span>
+        <button disabled={page===res.total_pages}
+          onClick={()=>setPage((prev)=>prev+1)}>Next</button>
         </>
     )
 }
