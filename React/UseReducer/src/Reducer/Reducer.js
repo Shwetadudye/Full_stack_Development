@@ -1,7 +1,9 @@
+import { act } from 'react';
 import * as types from '../Reducer/Action'
 
 
 export const Reducer = (oldState, action)=>{
+    console.log(action.oldState);
     console.log(action.type);
     console.log(action.payload);
     
@@ -16,6 +18,12 @@ export const Reducer = (oldState, action)=>{
                     isCompleted: false,
                 },
             ];
+
+            case types.DELETE_TODO_ITEMS:
+                return oldState.filter((items)=> items.id !== action.payload);
+
+            case types.EDITS_TODO_ITEMS:
+                return oldState.map((items)=> items.id === action.payload ? {...items, isEdits:true}: items)
 
             default:
                 return oldState;
