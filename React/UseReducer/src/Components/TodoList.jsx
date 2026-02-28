@@ -11,7 +11,12 @@ export const TodoList =()=>{
      };
      const handleDelete = (id)=>{
            dispatch({type: types.DELETE_TODO_ITEMS, payload: id});
+     };
+     const handlePinned =(id) =>{
+            dispatch({type: types.PINNED_TODO_ITEM,payload:id});
      }
+
+
      return (
           <>
           {todo.length > 0 &&
@@ -29,6 +34,7 @@ export const TodoList =()=>{
                     <h4>{items.isEdits ? 'true' : 'false'}</h4>
                     <button onClick={()=>{handleEdits(items.id)}}>edit</button>
                     <button onClick={()=>{handleDelete(items.id)}}>delete</button>
+                    <button onClick={()=>{handlePinned(items.id)}}>{items.isPinned ? 'unpin': 'pin'}</button>
                  </div>
               );
           })}

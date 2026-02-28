@@ -16,6 +16,7 @@ export const Reducer = (oldState, action)=>{
                     text: action.payload,
                     isEdits:false,
                     isCompleted: false,
+                    isPinned: false,
                 },
             ];
 
@@ -23,7 +24,12 @@ export const Reducer = (oldState, action)=>{
                 return oldState.filter((items)=> items.id !== action.payload);
 
             case types.EDITS_TODO_ITEMS:
-                return oldState.map((items)=> items.id === action.payload ? {...items, isEdits:true}: items)
+                return oldState.map((items)=> items.id === action.payload ? {...items, isEdits:true}: items);
+            
+            case types.PINNED_TODO_ITEM:
+                const newpinitems = oldState.map((items)=> items.id === action.payload ? {...items, isPinned:true}: items);
+                    return [...newpinitems].sort((a,b)=> b.isPinned - a.isPinned );
+            
 
             default:
                 return oldState;

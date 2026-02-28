@@ -6,6 +6,7 @@ import { Reducer } from "../Reducer/Reducer";
 
 export const TodoInput =()=>{
     const {state , dispatch, setTodo, text, setText}= useContext(TodosValContext);
+    
 
     const handleAdd =()=>{
         dispatch({payload:text,type : types.ADD_TODO_ITEMS})
