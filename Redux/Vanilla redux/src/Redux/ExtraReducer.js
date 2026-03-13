@@ -1,10 +1,10 @@
 import *  as types from '../Redux/Action';
 
-// const initialValue = {
-//     amount :100,
-// };
+const initialValue = {
+    amount :100,
+};
 
-const Reducer = (oldState ,{type, payload})=>{
+const Reducer = (oldState = initialValue,{type, payload})=>{
     console.log(type);
     switch (type){
         case types.DOUBLE:

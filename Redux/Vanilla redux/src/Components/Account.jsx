@@ -8,7 +8,7 @@ export const Account = () =>{
     const dispatch = useDispatch();
     const value = useSelector((store)=>{
     console.log("store in selector hook " , store);
-    return store.amount
+    return store?.amount;
     });
     
    // const {dispatch , subscribe } =myStore;

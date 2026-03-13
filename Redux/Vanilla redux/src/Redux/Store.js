@@ -19,4 +19,4 @@ observed.subscribe({
     }
 });
 
-export {myStore};3
+export {myStore};
