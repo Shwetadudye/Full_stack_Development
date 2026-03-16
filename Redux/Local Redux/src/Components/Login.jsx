@@ -6,7 +6,7 @@ import axios from "axios";
 
 export const Login =()=>{
     const dispatch = useDispatch();
-    const value = useSelector((store)=>store);
+    const value = useSelector((store)=>store.isLoading);
     const [userValue, setUserValue] =React.useState({
         email:'',
         password:'',
@@ -45,7 +45,10 @@ export const Login =()=>{
         });
     };
 
-    console.log(value);
+    if(value){
+        return <h1>Loading....</h1>
+    }
+
     return(
         <>
         <div>

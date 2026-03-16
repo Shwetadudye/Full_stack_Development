@@ -1,6 +1,6 @@
 
-import { loadData, saveData} from '../Data/localStorage';
-import {LOGIN_REQUEST, LOGIN_SUCESS,LOGIN_FAILUER} from './Action'
+import { loadData, saveData , deleteToken} from '../Data/localStorage';
+import {LOGIN_REQUEST, LOGIN_SUCESS,LOGIN_FAILUER, REMOVE_TOKEN} from './Action'
 
 
 const key = 'token';
@@ -17,6 +17,15 @@ const initialValue ={
 
 const Reducer =(oldState = initialValue,{type , payload})=>{
     switch(type){
+        case REMOVE_TOKEN:{
+            deleteToken(key);
+            return{
+                ...oldState,
+                isLoading:false,
+                isAuth: false,
+                isToken: "",
+            }
+        }
         case LOGIN_REQUEST:
             return {
                 ...oldState,
