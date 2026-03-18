@@ -1,9 +1,9 @@
 import { combineReducers, legacy_createStore } from "redux";
-import {Reducer} from '../Redux/Reducer';
+import {AuthReducer} from '../Redux/Auth/Reducer';
 import { TodoReducer } from "../Redux/Todos/Reducer";
 
 const rootTerminal= combineReducers({
-    //auth:AuthReducer,
+    auth:AuthReducer,
     todo: TodoReducer
 })
 
