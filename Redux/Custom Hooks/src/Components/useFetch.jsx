@@ -59,9 +59,9 @@ export const useFetch = (url, key)=>{
         .get(url,key||'')
         .then((res)=>dispatch({type:API_SUCCESS,payload: res}))
         .catch(()=>dispatch({type:API_FAILURE}))
-        .finally(console.log('Done'));
+        .finally(()=>console.log("Done"));
 
-    },[url,key]);
+    },[url]);
 
     return state;
 }
