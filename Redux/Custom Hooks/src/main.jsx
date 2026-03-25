@@ -7,10 +7,7 @@ import { LocalStorageApp } from './LocalStorageApp.jsx'
 
 createRoot(document.getElementById('root')).render(
   <>
-    <App />
-   <FetchApp />
+   {/*<FetchApp />*/ }  
    <LocalStorageApp />
   </>,
 )
-
-/// tree map sorted hashmap not sorted

@@ -8,21 +8,28 @@ export const LocalStorageApp=()=>{
         key :'',
         initialValue:'',
     });
-    const [state,setState]= useLocalStorage("name","Shweta");
+    const [state,setState]= useLocalStorage("name", "Shweta");
 
 
     // const handleSubmit=(e)=>{
     //     e.preventDefault();
-    //     setState(data);
+    //     setState(data.key,data.initialValue);
     // };
 
-    // const handleChange=()=>{
-    //     const [name, value]= e.target;
-    // };
+    //  const handleChange=(e)=>{
+    //    const {name, value}= e.target;
+
+    //    setData((prev)=>{
+    //     return{
+    //       ...prev,
+    //     [name]:value
+    //     }
+    //    });
+    //  };
 
     return(
         <>
-        <h1>UseFetch Hook</h1>
+        <h3>useLocalStorage Custom Hook</h3>
         {/* <form onSubmit={handleSubmit}>
             <input type="text" placeholder="enter your key" 
             onChange={handleChange}

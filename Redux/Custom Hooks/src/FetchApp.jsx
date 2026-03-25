@@ -15,7 +15,7 @@ export const FetchApp =()=>{
 
     return(
         <>
-        <h1>UseFetch</h1>
+        <h3>UseFetch Custom Hook</h3>
         </>
     );
 };
