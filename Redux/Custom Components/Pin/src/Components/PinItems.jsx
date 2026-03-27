@@ -1,6 +1,22 @@
 import React from "react";
 
-export const PinItems =({max})=>{
+export const PinItems = React.forwardRef(
+    ({max, handleChangeEvent},nodeRefData )=>
+    {
+     const handlePinItems=(e)=>{
+        console.log(e);
+        switch(e.keyCode){
+            //backspace
+            case 8:
+                break;
+            // Tab key
+            case 9:
+                e.preventDefault();
+                break;
+            default:
+                handleChangeEvent(e);
+        }
+     };
     return(
         <input style={
             {
@@ -11,6 +27,10 @@ export const PinItems =({max})=>{
                 textAlign: 'center' }
         }
         type="text"
-        maxLength={max} />
+        maxLength={max}
+        onKeyUp={handlePinItems}
+        ref={nodeRefData}
+        />
     );
-};
+  }
+);

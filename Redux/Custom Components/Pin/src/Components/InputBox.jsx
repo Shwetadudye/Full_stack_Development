@@ -8,8 +8,8 @@ export const InputBox =({label, length , preBox})=>{
 
     const nodeRefData = React.useRef(new Array(length).fill(0));
 
-    handleChange = (value , index)=>{
-        let newVal =[...PinValue];
+   const handleChange = (event , index)=>{
+        let value =[...PinValue];
 
         newVal[index]= value;
 
@@ -17,8 +17,9 @@ export const InputBox =({label, length , preBox})=>{
 
         //nodeRefData.current[index+1].focus();
 
-        // console.log(nodeRefData);
     }
+
+    console.log(PinValue);
 
     return(
         <>
@@ -31,9 +32,16 @@ export const InputBox =({label, length , preBox})=>{
         }}>
 
             {PinValue.map((el,i) =>{
-                return <PinItems key ={i+1} max={preBox} 
-                handleChangeEvent = {(e)=> handleChange(e.target.value,)}
-                />;
+                return(
+                 <PinItems 
+                 key ={i+1}
+                  max={preBox} 
+                handleChangeEvent = {(e)=> 
+                handleChange(e,i)}
+                nodeRefData={(node)=>
+                    (nodeRefData.current[i]=node)}
+                />
+                );
             })}
         </div>
         </>
