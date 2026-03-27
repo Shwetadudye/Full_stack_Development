@@ -6,6 +6,20 @@ import { PinItems } from "./PinItems";
 export const InputBox =({label, length , preBox})=>{
     const [PinValue,setPinValue]= React.useState(new Array(length).fill(''));
 
+    const nodeRefData = React.useRef(new Array(length).fill(0));
+
+    handleChange = (value , index)=>{
+        let newVal =[...PinValue];
+
+        newVal[index]= value;
+
+        setPinValue(newVal);
+
+        //nodeRefData.current[index+1].focus();
+
+        // console.log(nodeRefData);
+    }
+
     return(
         <>
         <h1 style={{textAlign:'center'}}>{label}</h1>
@@ -17,7 +31,9 @@ export const InputBox =({label, length , preBox})=>{
         }}>
 
             {PinValue.map((el,i) =>{
-                return <PinItems key ={i+1} max={preBox} />;
+                return <PinItems key ={i+1} max={preBox} 
+                handleChangeEvent = {(e)=> handleChange(e.target.value,)}
+                />;
             })}
         </div>
         </>
