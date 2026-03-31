@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { PinItems } from "./PinItems";
 
+// task : backspace ->clear 
+// copy paste
+
 
 export const InputBox =({label, length , preBox})=>{
     const [PinValue,setPinValue]= React.useState(new Array(length).fill(''));
