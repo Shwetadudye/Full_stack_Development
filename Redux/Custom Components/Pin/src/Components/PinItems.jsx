@@ -1,7 +1,7 @@
 import React from "react";
 
 export const PinItems = React.forwardRef(
-    ({max, handleChangeEvent},nodeRefData )=>
+    ({max, handleChangeEvent},ref)=>
     {
      const handlePinItems=(e)=>{
         console.log(e);
@@ -13,8 +13,10 @@ export const PinItems = React.forwardRef(
             case 9:
                 e.preventDefault();
                 break;
+            
             default:
-                handleChangeEvent(e);
+                handleChangeEvent(e.target.value);
+                break;
         }
      };
     return(
@@ -29,7 +31,7 @@ export const PinItems = React.forwardRef(
         type="text"
         maxLength={max}
         onKeyUp={handlePinItems}
-        ref={nodeRefData}
+        ref={ref}
         />
     );
   }
