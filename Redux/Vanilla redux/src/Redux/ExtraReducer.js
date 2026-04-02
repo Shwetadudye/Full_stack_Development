@@ -6,6 +6,8 @@ const initialValue = {
 
 const Reducer = (oldState = initialValue,{type, payload})=>{
     console.log(type);
+
+    
     switch (type){
         case types.DOUBLE:
             return {

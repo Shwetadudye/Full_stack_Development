@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo , useMemo } from "react";
 
 const expensiveFunction =(value) =>{
     const  startTime = Date.now();
@@ -21,8 +21,12 @@ const expensiveFunction =(value) =>{
     return true;
 }
 
+/* memo ->  use for components optimize
+useCallBack -> use for  hook optimize
+useMemo -> use for calculation function optimization */
+
  const TodoList = ({todo , handleDelete , handleEdits})=>{
-    expensiveFunction(200);
+    useMemo(()=>expensiveFunction(200),[]);
     return(
         <>
         {todo && 
@@ -47,13 +51,15 @@ const expensiveFunction =(value) =>{
     )
 }
 
-const expensiveCalculationFunc = (prevValue , currValue)=>{
-    return(
-        prevValue.todo.length === currValue.todo.length &&
-        prevValue.todo.map(
-            (el,index) => el.isEdits !== currValue.todo[index].isEdits,
-        )
-    )
-};
+// const expensiveCalculationFunc = (prevValue , currValue)=>{
+//     return(
+//         prevValue.todo.length === currValue.todo.length &&
+//         prevValue.todo.map(
+//             (el,index) => el.isEdits !== currValue.todo[index].isEdits,
+//         )
+//     )
+// };
 
-export const TodoLists = memo(TodoList, expensiveCalculationFunc)
+// export const TodoLists = memo(TodoList, expensiveCalculationFunc)
+
+export const TodoLists = TodoList;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { TodoLists } from "./TodoList";
 
 export const TodoInput =() =>{
@@ -18,19 +18,22 @@ export const TodoInput =() =>{
 
     };
 
-    const handleEdits = (id) =>{
+    const handleEdits = useCallback((id) =>{
         let valueEdit = todo.map((el)=>
         el.id === id? {...el,isEdits:true}:el,
         );
         setTodo(valueEdit);
-    }
+    }, [todo],
+    );
 
-    const handleDelete =(id)=>{
+    const handleDelete =useCallback((id)=>{
         todo.splice(
             todo.findIndex((el)=> el.id === id), 
             1
         );
-    };
+        
+    },[todo],
+);
 
     return(
         <>

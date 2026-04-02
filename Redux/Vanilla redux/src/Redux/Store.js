@@ -11,12 +11,12 @@ setTimeout(()=>{
     myStore.dispatch({type: DOUBLE});
 },2000);
 
-const observed = myStore["@@observable"]();
+// const observed = myStore["@@observable"]();
 
-observed.subscribe({
-    next: (event)=>{
-        console.log("this is from obderve subscribe function value" , event);
-    }
-});
+// observed.subscribe({
+//     next: (event)=>{
+//         console.log("this is from obderve subscribe function value" , event);
+//     }
+// });
 
 export {myStore};
