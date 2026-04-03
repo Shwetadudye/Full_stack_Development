@@ -10,8 +10,9 @@ export const Counter=()=>{
     return(
         <>
         <div>Counter {count}</div>
-        <button onClick={()=>dispatch(increment())}>Inc</button>
-        <button onClick={()=>dispatch(decrement())}>Dec</button>
+        <button functions={()=>dispatch(increment())} label = {'Inc'} />
+        <button functions={()=>dispatch(decrement())} 
+        label={'Dec'}/>
         </>
     )
 }
