@@ -11,6 +11,8 @@ import './App.css'
     const answer = inputvalue.current.value;
     console.log(answer);
    }
+   
+
   return (
     <>
      <input type='text' ref={inputvalue}/>

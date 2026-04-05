@@ -2,8 +2,6 @@ import { useContext } from "react"
 
 import { ContextValue } from "../Context/ContextProvider";
 
-
-
  export const Button =()=>{
     const { setCount} = useContext(ContextValue);
 

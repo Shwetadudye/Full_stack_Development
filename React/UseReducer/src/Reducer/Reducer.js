@@ -1,4 +1,4 @@
-import { act } from 'react';
+import { React } from 'react';
 import * as types from '../Reducer/Action'
 
 
