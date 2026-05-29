@@ -6,78 +6,41 @@ import { useNavigate } from 'react-router-dom';
 import { LOGIN_SUCCESS } from '../Redux/Auth/Action';
 
 export const Login = () => {
-  const dispatch = useDispatch();
-  
-  const navigate = useNavigate();
+    const location = useLocation();
 
-  const {isLoading , isError}= useSelector((store)=>store.auth);
+    const [ email, setEmail]= React.useState('');
+    const [password , setPassword] = React.useState('');
 
-  const value = useSelector((store) => store.auth.isLoading);
-  console.log('🚀 ~ value:', value);
+    console.log(location);
 
-  const [userValue, setUserValue] = React.useState({
-    email: '',
-    password: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setUserValue((prev) => {
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    //dispatch({type:"",payload:""})
-    dispatch(loginUser(userValue)).then((res)=>{
-      if(res.type=== LOGIN_SUCCESS){
-        navigate('/');
-      }
-    }); //og pattern
-    // loginUser(userValue, dispatch);
-  };
-
-  if (isLoading) {
-    return <h1>Loading....</h1>;
-  }
-
-  if (isError){
-    return <h1>Something went wrong</h1>
-  }
+    const handleFormSubmit=(e)=>{
+        e.preventDefault();
+        Api.post(location.pathname,{email,password}) // axios automatically stringify the value .. if we use fetch then we have to do stringify
+        .then((res)=>console.log(res))
+        .catch((err)=>console.log(err))
+    };
 
   return (
-    <div>
-      <form
-        onSubmit={handleFormSubmit}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column',
-          height: '30vh',
-          gap: '1rem',
-        }}
-      >
-        <div>
-          <label htmlFor="">email</label>{' '}
-          <input type="text" name="email" onChange={(e) => handleChange(e)} />
-        </div>
-
-        <div>
-          <label htmlFor="">password</label>{' '}
-          <input
-            type="text"
-            name="password"
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-
-        <button type="submit">submit</button>
-      </form>
-    </div>
+      <>
+        <h1>Login</h1>
+        <form onSubmit = {handleFormSubmit}>
+            <label htmlFor="email">Email</label>
+            <input
+               id="email"
+               type="text"
+               placeholder='enter youe email'
+               onChange={(e)=>setEmail(e.target.value)}
+               />
+            <label htmlFor="password">Password</label>
+            <input 
+               id="password"
+               type="text"
+               placeholder="Enter your password"
+               onChange={(e)=>setPassword(e.target.value)}
+               />
+            <button type="submit">Submit</button>
+        </form>
+        </>
   );
 };
+0
