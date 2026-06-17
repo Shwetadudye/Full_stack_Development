@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Effetc</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+        #box{
+            background: palevioletred;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <h2>dude</h2>
+      <h3>hello</h3>
+      <h4>Hiii</h4>
+    </div>
+    <button id="hideBtn">hideButton</button>
+      <button id="showBtn">showButton</button>
+      <button id="toggleBtn">toggleButton</button>
+  </body>
+  <script>
+    $(function () {
+      let name = 'shweta';
+      $('h3').before(`<h1>${name}</h1>`);
+      $('h4').append(name);
+
+      $('#hideBtn').click(function(){
+        $('#box').hide();
+      });
+
+      $('#showBtn').click(function(){
+        $('#box').show();
+      })
+
+      $('#toggleBtn').click(function(){
+        $('#box').toggle();
+      })
+    });
+  </script>
+</html>
